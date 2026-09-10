@@ -1,0 +1,496 @@
+{
+  "dataset": {
+    "source": "UCI Machine Learning Repository - Bank Marketing Dataset (Moro, Cortez & Rita, 2014), mirrored as a public CSV",
+    "n_rows": 11162,
+    "n_columns": 17,
+    "columns": [
+      "age",
+      "job",
+      "marital",
+      "education",
+      "default",
+      "balance",
+      "housing",
+      "loan",
+      "contact",
+      "day",
+      "month",
+      "duration",
+      "campaign",
+      "pdays",
+      "previous",
+      "poutcome",
+      "deposit"
+    ]
+  },
+  "data_quality": {
+    "duplicate_rows": 0,
+    "null_counts": {
+      "age": 0,
+      "job": 0,
+      "marital": 0,
+      "education": 0,
+      "default": 0,
+      "balance": 0,
+      "housing": 0,
+      "loan": 0,
+      "contact": 0,
+      "day": 0,
+      "month": 0,
+      "duration": 0,
+      "campaign": 0,
+      "pdays": 0,
+      "previous": 0,
+      "poutcome": 0,
+      "deposit": 0
+    },
+    "unknown_value_counts": {
+      "job": 70,
+      "education": 497,
+      "contact": 2346,
+      "poutcome": 8326
+    },
+    "target_distribution": {
+      "no": 5873,
+      "yes": 5289
+    },
+    "numeric_summary": {
+      "age": {
+        "count": 11162.0,
+        "mean": 41.23,
+        "std": 11.91,
+        "min": 18.0,
+        "25%": 32.0,
+        "50%": 39.0,
+        "75%": 49.0,
+        "max": 95.0
+      },
+      "balance": {
+        "count": 11162.0,
+        "mean": 1528.54,
+        "std": 3225.41,
+        "min": -6847.0,
+        "25%": 122.0,
+        "50%": 550.0,
+        "75%": 1708.0,
+        "max": 81204.0
+      },
+      "day": {
+        "count": 11162.0,
+        "mean": 15.66,
+        "std": 8.42,
+        "min": 1.0,
+        "25%": 8.0,
+        "50%": 15.0,
+        "75%": 22.0,
+        "max": 31.0
+      },
+      "duration": {
+        "count": 11162.0,
+        "mean": 371.99,
+        "std": 347.13,
+        "min": 2.0,
+        "25%": 138.0,
+        "50%": 255.0,
+        "75%": 496.0,
+        "max": 3881.0
+      },
+      "campaign": {
+        "count": 11162.0,
+        "mean": 2.51,
+        "std": 2.72,
+        "min": 1.0,
+        "25%": 1.0,
+        "50%": 2.0,
+        "75%": 3.0,
+        "max": 63.0
+      },
+      "pdays": {
+        "count": 11162.0,
+        "mean": 51.33,
+        "std": 108.76,
+        "min": -1.0,
+        "25%": -1.0,
+        "50%": -1.0,
+        "75%": 20.75,
+        "max": 854.0
+      },
+      "previous": {
+        "count": 11162.0,
+        "mean": 0.83,
+        "std": 2.29,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 1.0,
+        "max": 58.0
+      }
+    },
+    "imputation_log": {
+      "job": {
+        "imputed_with": "management",
+        "rows_imputed": 70
+      },
+      "education": {
+        "imputed_with": "secondary",
+        "rows_imputed": 497
+      },
+      "contact": {
+        "imputed_with": "cellular",
+        "rows_imputed": 2346
+      },
+      "poutcome": "kept as own category (no prior contact)"
+    }
+  },
+  "eda": {
+    "job_subscription_rate": {
+      "student": 0.747,
+      "retired": 0.663,
+      "unemployed": 0.566,
+      "management": 0.506,
+      "admin.": 0.473,
+      "self-employed": 0.462,
+      "technician": 0.461,
+      "services": 0.4,
+      "housemaid": 0.398,
+      "entrepreneur": 0.375,
+      "blue-collar": 0.364
+    },
+    "month_subscription_rate": {
+      "jan": 0.413,
+      "feb": 0.568,
+      "mar": 0.899,
+      "apr": 0.625,
+      "may": 0.328,
+      "jun": 0.447,
+      "jul": 0.414,
+      "aug": 0.453,
+      "sep": 0.843,
+      "oct": 0.824,
+      "nov": 0.427,
+      "dec": 0.909
+    },
+    "overall_subscription_rate": 0.474,
+    "mean_duration_subscribed": 537.3,
+    "mean_duration_not_subscribed": 223.1,
+    "correlation_with_target": {
+      "age": 0.035,
+      "balance": 0.081,
+      "day": -0.056,
+      "duration": 0.452,
+      "campaign": -0.128,
+      "pdays": 0.152,
+      "previous": 0.14
+    }
+  },
+  "supervised_with_duration": {
+    "model_comparison": {
+      "Logistic Regression": {
+        "cv_auc_mean": 0.8969,
+        "cv_auc_std": 0.0044,
+        "test_accuracy": 0.8142,
+        "test_precision": 0.8238,
+        "test_recall": 0.7732,
+        "test_f1": 0.7977,
+        "test_roc_auc": 0.9008
+      },
+      "Decision Tree": {
+        "cv_auc_mean": 0.8678,
+        "cv_auc_std": 0.0058,
+        "test_accuracy": 0.8119,
+        "test_precision": 0.819,
+        "test_recall": 0.7741,
+        "test_f1": 0.7959,
+        "test_roc_auc": 0.8661
+      },
+      "Random Forest": {
+        "cv_auc_mean": 0.9103,
+        "cv_auc_std": 0.005,
+        "test_accuracy": 0.8365,
+        "test_precision": 0.8069,
+        "test_recall": 0.8611,
+        "test_f1": 0.8331,
+        "test_roc_auc": 0.9125
+      },
+      "Gradient Boosting": {
+        "cv_auc_mean": 0.9111,
+        "cv_auc_std": 0.0037,
+        "test_accuracy": 0.8348,
+        "test_precision": 0.8152,
+        "test_recall": 0.8422,
+        "test_f1": 0.8285,
+        "test_roc_auc": 0.9149
+      },
+      "K-Nearest Neighbors": {
+        "cv_auc_mean": 0.8769,
+        "cv_auc_std": 0.007,
+        "test_accuracy": 0.8056,
+        "test_precision": 0.8203,
+        "test_recall": 0.7552,
+        "test_f1": 0.7864,
+        "test_roc_auc": 0.8817
+      }
+    },
+    "best_model": "Gradient Boosting",
+    "best_test_roc_auc": 0.9149,
+    "confusion_matrix": [
+      [
+        973,
+        202
+      ],
+      [
+        167,
+        891
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.8535087719298246,
+        "recall": 0.8280851063829787,
+        "f1-score": 0.8406047516198704,
+        "support": 1175.0
+      },
+      "1": {
+        "precision": 0.8151875571820677,
+        "recall": 0.8421550094517959,
+        "f1-score": 0.8284518828451883,
+        "support": 1058.0
+      },
+      "accuracy": 0.8347514554411106,
+      "macro avg": {
+        "precision": 0.8343481645559461,
+        "recall": 0.8351200579173873,
+        "f1-score": 0.8345283172325293,
+        "support": 2233.0
+      },
+      "weighted avg": {
+        "precision": 0.8353521014402917,
+        "recall": 0.8347514554411106,
+        "f1-score": 0.8348466973594075,
+        "support": 2233.0
+      }
+    },
+    "top_features": {
+      "duration": 0.5503,
+      "poutcome_success": 0.1036,
+      "has_any_loan": 0.0765,
+      "pdays": 0.0555,
+      "age": 0.0337,
+      "month_mar": 0.0309,
+      "day": 0.0216,
+      "month_may": 0.019,
+      "month_oct": 0.0175,
+      "month_apr": 0.0161,
+      "balance": 0.0148,
+      "month_feb": 0.0116,
+      "campaign": 0.0079,
+      "month_sep": 0.0058,
+      "job_blue-collar": 0.0044
+    },
+    "train_size": 8929,
+    "test_size": 2233
+  },
+  "supervised_deployable": {
+    "model_comparison": {
+      "Logistic Regression": {
+        "cv_auc_mean": 0.7445,
+        "cv_auc_std": 0.0075,
+        "test_accuracy": 0.6861,
+        "test_precision": 0.7274,
+        "test_recall": 0.5397,
+        "test_f1": 0.6196,
+        "test_roc_auc": 0.7432
+      },
+      "Decision Tree": {
+        "cv_auc_mean": 0.7175,
+        "cv_auc_std": 0.009,
+        "test_accuracy": 0.6838,
+        "test_precision": 0.8154,
+        "test_recall": 0.4301,
+        "test_f1": 0.5631,
+        "test_roc_auc": 0.729
+      },
+      "Random Forest": {
+        "cv_auc_mean": 0.7724,
+        "cv_auc_std": 0.0083,
+        "test_accuracy": 0.7156,
+        "test_precision": 0.775,
+        "test_recall": 0.5633,
+        "test_f1": 0.6524,
+        "test_roc_auc": 0.7713
+      },
+      "Gradient Boosting": {
+        "cv_auc_mean": 0.7702,
+        "cv_auc_std": 0.0068,
+        "test_accuracy": 0.7264,
+        "test_precision": 0.7945,
+        "test_recall": 0.5699,
+        "test_f1": 0.6637,
+        "test_roc_auc": 0.774
+      },
+      "K-Nearest Neighbors": {
+        "cv_auc_mean": 0.7336,
+        "cv_auc_std": 0.0128,
+        "test_accuracy": 0.6906,
+        "test_precision": 0.7326,
+        "test_recall": 0.5463,
+        "test_f1": 0.6259,
+        "test_roc_auc": 0.7271
+      }
+    },
+    "best_model": "Gradient Boosting",
+    "best_test_roc_auc": 0.774,
+    "confusion_matrix": [
+      [
+        1019,
+        156
+      ],
+      [
+        455,
+        603
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.6913161465400272,
+        "recall": 0.8672340425531915,
+        "f1-score": 0.7693469233673084,
+        "support": 1175.0
+      },
+      "1": {
+        "precision": 0.7944664031620553,
+        "recall": 0.5699432892249527,
+        "f1-score": 0.6637314254265272,
+        "support": 1058.0
+      },
+      "accuracy": 0.7263770712046574,
+      "macro avg": {
+        "precision": 0.7428912748510412,
+        "recall": 0.7185886658890721,
+        "f1-score": 0.7165391743969178,
+        "support": 2233.0
+      },
+      "weighted avg": {
+        "precision": 0.7401889506179966,
+        "recall": 0.7263770712046574,
+        "f1-score": 0.7193060828740945,
+        "support": 2233.0
+      }
+    },
+    "top_features": {
+      "poutcome_success": 0.2571,
+      "has_any_loan": 0.1304,
+      "pdays": 0.087,
+      "age": 0.0863,
+      "day": 0.0725,
+      "balance": 0.0641,
+      "month_mar": 0.0478,
+      "month_apr": 0.0451,
+      "campaign": 0.032,
+      "month_oct": 0.0304,
+      "month_may": 0.0231,
+      "month_feb": 0.0171,
+      "marital_married": 0.0159,
+      "month_sep": 0.0116,
+      "month_dec": 0.0101
+    },
+    "train_size": 8929,
+    "test_size": 2233
+  },
+  "clustering": {
+    "features_used": [
+      "age",
+      "balance",
+      "campaign",
+      "previous"
+    ],
+    "k_range_tested": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "inertias": [
+      36789.3,
+      30834.9,
+      25056.4,
+      19962.1,
+      17889.2,
+      15990.5,
+      14237.0,
+      12815.6,
+      11928.8
+    ],
+    "silhouette_scores": [
+      0.3107,
+      0.3398,
+      0.3617,
+      0.3709,
+      0.3758,
+      0.3802,
+      0.3835,
+      0.2858,
+      0.2866
+    ],
+    "chosen_k": 6,
+    "chosen_k_rationale": "Max silhouette score within a business-interpretable range of 3-6 segments; global max silhouette in tested range 2-10 was at k=8 (silhouette=0.3835) but was judged too granular for actionable segmentation.",
+    "final_silhouette_score": 0.3758,
+    "cluster_sizes": {
+      "0": 6139,
+      "1": 712,
+      "2": 434,
+      "3": 533,
+      "4": 3281,
+      "5": 63
+    },
+    "cluster_profile": {
+      "0": {
+        "age": 33.82,
+        "balance": 785.23,
+        "campaign": 2.06,
+        "previous": 0.43,
+        "deposit_flag": 0.46
+      },
+      "1": {
+        "age": 42.06,
+        "balance": 7840.59,
+        "campaign": 2.18,
+        "previous": 0.6,
+        "deposit_flag": 0.54
+      },
+      "2": {
+        "age": 40.54,
+        "balance": 964.16,
+        "campaign": 12.43,
+        "previous": 0.11,
+        "deposit_flag": 0.24
+      },
+      "3": {
+        "age": 41.07,
+        "balance": 1400.01,
+        "campaign": 2.3,
+        "previous": 8.43,
+        "deposit_flag": 0.68
+      },
+      "4": {
+        "age": 54.89,
+        "balance": 1107.72,
+        "campaign": 2.13,
+        "previous": 0.49,
+        "deposit_flag": 0.48
+      },
+      "5": {
+        "age": 48.79,
+        "balance": 29514.75,
+        "campaign": 2.75,
+        "previous": 0.87,
+        "deposit_flag": 0.51
+      }
+    }
+  }
+}
